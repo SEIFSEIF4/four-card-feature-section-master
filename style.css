@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+/* Start Variables */
+:root {
+	/* Primary */
+	--Red-color: hsl(0, 78%, 62%);
+	--Cyan-color: hsl(180, 62%, 55%);
+	--Orange-color: hsl(34, 97%, 64%);
+	--Blue-color: hsl(212, 86%, 64%);
+	/* Neutral */
+	--VeryDarkBlue-color: hsl(234, 12%, 34%);
+	--GrayishBlue-color: hsl(229, 6%, 66%);
+	--VeryLightGray-color: hsl(0, 0%, 98%);
+	/*Font size*/
+	--word-Font-size: 1.2rem;
+	--CardHeading-font-size: 0.875rem;
+	--parg-font-size: 0.75rem;
+}
+/* End Variables */
+/* End Global Rules */
+*,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: "Poppins", sans-serif;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	min-height: 100vh;
+	overflow: hidden;
+}
+.container {
+	max-width: 30rem;
+	height: auto;
+	margin: 1rem;
+	min-height: 100vh;
+}
+.container .heading {
+	padding: 1rem;
+}
+.container .heading h1 {
+	font-size: var(--word-Font-size);
+	font-weight: 400;
+	text-align: center;
+	margin-top: 1rem;
+}
+.container .heading span {
+	font-weight: 600;
+}
+.container .heading p {
+	color: var(--LightGray-color);
+	font-size: 0.75rem;
+	text-align: center;
+	padding: 0.625rem 0.625rem;
+	margin-top: 1rem;
+	font-weight: 200;
+}
+.container .cards {
+	display: grid;
+	gap: 1rem;
+}
+.container .cards .card {
+	max-width: 15rem;
+	background-color: white;
+	margin-inline: auto;
+	border-top: 3px solid;
+	border-radius: 0.3125rem;
+	background-color: var(--VeryLightGray-color);
+	box-shadow: 1px 6px 15px 3px rgba(0, 0, 0, 0.65);
+	-webkit-box-shadow: 1px 6px 15px 3px rgba(0, 0, 0, 0.65);
+	-moz-box-shadow: 1px 6px 15px 3px rgba(0, 0, 0, 0.65);
+}
+.container .cards .card h2 {
+	font-size: var(--CardHeading-Font-size);
+	font-weight: 600;
+	padding: 0.625rem;
+}
+.container .cards .card p {
+	font-size: var(--parg-font-size);
+	color: var(--LightGray-color);
+	font-weight: 200;
+	padding: 0 0.625rem 1.25rem;
+}
+.container .cards .card lord-icon {
+	margin-inline-start: 11rem;
+}
+.container .cards .card:nth-child(1) {
+	border-color: var(--Cyan-color);
+}
+.container .cards .card:nth-child(2) {
+	border-color: var(--Red-color);
+}
+.container .cards .card:nth-child(3) {
+	border-color: var(--Orange-color);
+}
+.container .cards .card:nth-child(4) {
+	border-color: var(--Blue-color);
+}
+/* Media */
+@media (width>=768px) {
+	.container {
+		max-width: 60rem;
+	}
+	.container .heading {
+		width: 24rem;
+		margin-inline: auto;
+	}
+	.container .heading h1 {
+		font-size: 25px;
+	}
+	.container .heading p {
+		font-size: 12px;
+		text-align: center;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+	.container .cards {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		align-items: center;
+		gap: 2rem;
+		min-height: 20rem;
+		min-height: 22rem;
+		margin-top: 2rem;
+	}
+	.container .cards .card:nth-child(1) {
+		grid-row: 1/3;
+		align-items: center;
+	}
+	.container .cards .card:nth-child(4) {
+		grid-row: 1/3;
+		align-items: center;
+		grid-column: 3/4;
+	}
+}
